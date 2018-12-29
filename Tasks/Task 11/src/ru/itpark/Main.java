@@ -6,8 +6,6 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int indexOfMin;
-        int temp;
         System.out.println("Enter the number of elements");
         int n = scanner.nextInt();
         int[] array = new int[n];
@@ -16,6 +14,17 @@ public class Main {
             array[i] = scanner.nextInt();
         }
 
+        SelectionSort(array);
+        System.out.println("The sorted array:");
+        PrintArray(array);
+        System.out.println("Enter the number you are searching for");
+        int num = scanner.nextInt();
+        System.out.println(BinarySearch(n, num, array));
+    }
+
+    public static void SelectionSort(int[] array) {
+        int indexOfMin, temp;
+
         for (int i = 0; i < array.length - 1; i++) {
             indexOfMin = i;
             for (int j = i + 1; j < array.length; j++) {
@@ -23,21 +32,19 @@ public class Main {
                     indexOfMin = j;
                 }
             }
-
             temp = array[indexOfMin];
             array[indexOfMin] = array[i];
             array[i] = temp;
         }
+    }
 
-        System.out.println("The sorted array:");
-
+    public static void PrintArray(int[] array) {
         for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
+            System.out.println("array[" + i + "] = " + array[i]);
         }
+    }
 
-        System.out.println("Enter the number you are searching for");
-        int num = scanner.nextInt();
-
+    public static String BinarySearch(int n, int num, int[] array) {
         int left = 0;
         int right = n - 1;
         int middle = left + (right - left) / 2;
@@ -50,7 +57,6 @@ public class Main {
             }
             middle = left + (right - left) / 2;
         }
-
-        System.out.println("The index of " + array[middle] + " is " + middle);
+        return "The index of " + array[middle] + " is " + middle;
     }
 }

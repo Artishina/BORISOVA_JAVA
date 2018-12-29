@@ -9,6 +9,10 @@ public class Main {
         char[] firstLine = scanner.nextLine().toCharArray();
         char[] secondLine = scanner.nextLine().toCharArray();
 
+        GetIndexOfTheLine(firstLine, secondLine);
+    }
+
+    public static void GetIndexOfTheLine(char[] firstLine, char[] secondLine) {
         int maxLength = firstLine.length - secondLine.length;
 
         for (int i = 0; i <= maxLength; i++) {
@@ -19,13 +23,12 @@ public class Main {
             if (i <= maxLength) {
                 int startOfTheLine = i + 1;
                 int endOfTheLine = startOfTheLine + secondLine.length - 1;
-                for (int j = 1; startOfTheLine < endOfTheLine && firstLine[startOfTheLine] == secondLine[j]; startOfTheLine++, j++){}
-
+                for (int j = 1; startOfTheLine < endOfTheLine && firstLine[startOfTheLine] == secondLine[j]; startOfTheLine++, j++) {
+                }
 
                 if (startOfTheLine == endOfTheLine) {
                     System.out.println("Position = " + i);
-                }
-                else {
+                } else {
                     System.out.println("Try again!");
                 }
             }
