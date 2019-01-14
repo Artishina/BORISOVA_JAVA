@@ -30,6 +30,9 @@ public class Main {
         for (int i = array.length - 1; i >= 1; i--) {
             if (array[i] == 0 && array[i - 1] != 0) {
                 array[i] = num;
+            } else if (array[0] == 0) {
+                array[0] = num;
+                break;
             }
         }
     }
