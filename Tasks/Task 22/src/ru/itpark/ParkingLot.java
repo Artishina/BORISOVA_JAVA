@@ -101,7 +101,6 @@ class ParkingLot {
     }
 
     static void unpark(Vehicle vehicle) {
-        System.out.print("Выезд с парковки...");
         if (vehicle.getIsParked()) {
             parkingLot.remove();
             vehicle.setIsParked(false);
@@ -109,5 +108,15 @@ class ParkingLot {
         } else {
             System.out.println("Такого транспорта нет на парковке");
         }
+    }
+
+    static void unparkFew(Vehicle[] vehicles) {
+        System.out.println();
+        System.out.println("Выезд с парковки...");
+        for (int i = 0; i < vehicles.length; i++) {
+            System.out.print((i + 1) + ": ");
+            unpark(vehicles[i]);
+        }
+        System.out.println();
     }
 }

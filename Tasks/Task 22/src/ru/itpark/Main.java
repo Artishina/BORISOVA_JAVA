@@ -32,6 +32,7 @@ public class Main {
         ParkingLot.unpark(car);
         car.checkIfParked();
 
+        ParkingLot.unparkFew(vehicles);
 
         Car car2 = new Car(1111);
         ParkingLot.unpark(car2);
