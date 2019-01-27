@@ -31,7 +31,7 @@ public class Main {
 
 
         Remote remote = new Remote();
-        remote.pressButton(tv,2);
+        remote.pressButton(tv, 2);
 
     }
 }
