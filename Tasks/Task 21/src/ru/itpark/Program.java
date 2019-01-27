@@ -1,14 +1,18 @@
 package ru.itpark;
 
 class Program {
-    private String[] listOfProgrammes = {"Thomas & Friends", "House", "Adventure time", "Steven Universe", "What's New Scooby-Doo?",
-            "News", "Go away Unicorn!", "Power rangers", "Kojak", "Mr Bean"};
+    private String showTitle;
 
-    String[] getListOfProgrammes() {
-        return listOfProgrammes;
+    Program(String showTitle) {
+        this.showTitle = showTitle;
     }
 
-    int getNumberOfPrograms() {
-        return listOfProgrammes.length;
+    void printShowTitle() {
+        System.out.println("Идет " + showTitle);
     }
+
+    // private String[] listOfProgrammes = {"Thomas & Friends", "House", "Adventure time", "Steven Universe", "What's New Scooby-Doo?",
+    // "News", "Go away Unicorn!", "Power rangers", "Kojak", "Mr Bean"};
+
+
 }

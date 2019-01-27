@@ -1,13 +1,20 @@
 package ru.itpark;
 
 class TV {
-    private boolean isOn = false;
+    private Channel[] channels;
+    private static int count;
 
-    boolean getIsOn() {
-        return isOn;
+    TV(int n) {
+        channels = new Channel[n];
+        count = 0;
     }
 
-    void setIsOn(boolean isOn) {
-        this.isOn = isOn;
+    void showChannel(int channelNumber) {
+        channels[channelNumber - 1].show();
+    }
+
+    void addChannel(Channel channel) {
+        channels[count] = channel;
+        count++;
     }
 }
