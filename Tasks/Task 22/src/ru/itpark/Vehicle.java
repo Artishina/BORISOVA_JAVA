@@ -30,6 +30,14 @@ abstract class Vehicle {
         }
     }
 
+    void park() {
+        ParkingLot.park(this);
+    }
+
+    void unpark() {
+        ParkingLot.unpark(this);
+    }
+
     static void shootFew(Shooting[] vehicles) {
         System.out.println("Стрелба...");
         for (int i = 0; i < vehicles.length; i++) {

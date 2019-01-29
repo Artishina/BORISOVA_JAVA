@@ -10,7 +10,7 @@ public class Main {
         Spaceship spaceship = new Spaceship(1115);
         Bicycle bicycle = new Bicycle(1116);
 
-        ParkingLot.park(car);
+        car.park();
         car.checkIfParked();
 
         Vehicle[] vehicles = {car, helicopter, airplane, tank, spaceship, bicycle};
@@ -20,7 +20,7 @@ public class Main {
         Shooting[] shootingsVehicles = {tank, spaceship};
 
         ParkingLot.parkFew(vehicles);
-        ParkingLot.park(car);
+        car.park();
 
         ParkingLot.checkIfFull();
 
@@ -29,14 +29,14 @@ public class Main {
         Vehicle.shootFew(shootingsVehicles);
         Vehicle.flyFew(flyableVehicles);
 
-        ParkingLot.unpark(car);
+        car.unpark();
         car.checkIfParked();
 
         ParkingLot.unparkFew(vehicles);
 
         Car car2 = new Car(1111);
-        ParkingLot.unpark(car2);
+        car2.unpark();
 
-        ParkingLot.park(car2);
+        car.park();
     }
 }
