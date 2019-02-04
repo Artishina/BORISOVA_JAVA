@@ -40,6 +40,11 @@ class IntegerLinkedList implements IntegerList {
     public int get(int index) {
         Node current;
 
+        if (index < 0 || index > count) {
+            String exceptionMessage = "Получить значение элемента невозможно. Индекс вышел за пределы";
+            throw new IndexOutOfBoundsException(exceptionMessage);
+        }
+
         if (index == count - 1) {
             current = tail;
         } else {
@@ -57,6 +62,11 @@ class IntegerLinkedList implements IntegerList {
     public void insert(int value, int index) {
         Node node = new Node(value);
         Node prev = top;
+
+        if (index < 0 || index > count) {
+            String exceptionMessage = "Вставить элемент невозможно. Индекс вышел за пределы";
+            throw new IndexOutOfBoundsException(exceptionMessage);
+        }
 
         if (index == count) {
             addToEnd(value);
@@ -77,6 +87,11 @@ class IntegerLinkedList implements IntegerList {
     @Override
     public void remove(int index) {
         Node prev = top;
+
+        if (index < 0 || index > count) {
+            String exceptionMessage = "Удалить элемент невозможно. Индекс вышел за пределы";
+            throw new IndexOutOfBoundsException(exceptionMessage);
+        }
 
         for (int i = 0; i < index; i++) {
             if (i == index - 1) {
@@ -108,7 +123,26 @@ class IntegerLinkedList implements IntegerList {
 
     @Override
     public void sort() {
+        Node sorted = null;
+        Node current = top;
+        Node node;
 
+        while (current != null) {
+            Node next = current.getNext();
+            if (sorted == null || sorted.getValue() >= current.getValue()) {
+                current.setNext(sorted);
+                sorted = current;
+            } else {
+                node = sorted;
+                while (node.getNext() != null && node.getNext().getValue() < current.getValue()) {
+                    node = node.getNext();
+                }
+                current.setNext(node.getNext());
+                node.setNext(current);
+            }
+            current = next;
+        }
+        top = sorted;
     }
 
     @Override

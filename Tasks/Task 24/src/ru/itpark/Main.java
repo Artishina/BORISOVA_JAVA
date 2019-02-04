@@ -37,5 +37,9 @@ public class Main {
         list.reverse();
 
         list.print();
+
+        list.sort();
+
+        list.print();
     }
 }
