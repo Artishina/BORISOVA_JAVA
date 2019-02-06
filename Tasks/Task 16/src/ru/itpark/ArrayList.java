@@ -35,7 +35,14 @@ public class ArrayList {
 
     void insert(int element, int index) {
         if (index >= 0 && index < array.length) {
-            array[index] = element;
+            for (int i = getCount(); i > index; i--) {
+                if (index > getCount()) {
+                    add(element);
+                } else {
+                    array[i] = array[i - 1];
+                }
+            }
+           array[index] = element;
         } else {
             System.out.println("Array index out of bounds!");
         }
