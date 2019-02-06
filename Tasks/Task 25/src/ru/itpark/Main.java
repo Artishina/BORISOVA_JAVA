@@ -3,7 +3,8 @@ package ru.itpark;
 public class Main {
 
     public static void main(String[] args) {
-        GenericArrayList<Integer> integerList = new GenericArrayList<>();
+        System.out.println("GenericArrayIntegerList:");
+        GenericArrayList<Integer> integerList = new GenericArrayList<>(10);
         integerList.addToBeginning(1);
         integerList.addToBeginning(2);
 
@@ -25,8 +26,9 @@ public class Main {
         integerList.print();
 
         System.out.println();
+        System.out.println("GenericArrayStringList:");
 
-        GenericArrayList<String> stringList = new GenericArrayList<>();
+        GenericArrayList<String> stringList = new GenericArrayList<>(10);
         stringList.addToEnd("a");
         stringList.addToEnd("b");
         stringList.addToEnd("c");
@@ -38,6 +40,26 @@ public class Main {
         stringList.remove(9);
 
         stringList.print();
+
+        System.out.println();
+        System.out.println("GenericLinkedList:");
+
+        GenericLinkedList<Integer> integerLinkedList = new GenericLinkedList<>();
+        integerLinkedList.addToEnd(5);
+        integerLinkedList.addToBeginning(1);
+        System.out.println(integerLinkedList.get(0));
+
+        integerLinkedList.print();
+
+        integerLinkedList.insert(11,2);
+        integerLinkedList.print();
+
+        System.out.println(integerLinkedList.indexOf(1));
+
+        System.out.println(integerLinkedList.contains(5));
+
+        integerLinkedList.reverse();
+        integerLinkedList.print();
 
     }
 }

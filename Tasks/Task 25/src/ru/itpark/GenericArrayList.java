@@ -4,8 +4,8 @@ public class GenericArrayList<T> implements GenericList<T> {
     private T[] elements;
     private int count;
 
-    public GenericArrayList() {
-        elements = (T[]) new Object[10];
+    public GenericArrayList(int elementsLength) {
+        elements = (T[]) new Object[elementsLength];
         this.count = 0;
     }
 
