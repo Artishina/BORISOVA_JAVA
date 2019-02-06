@@ -42,16 +42,37 @@ public class Main {
         stringList.print();
 
         System.out.println();
-        System.out.println("GenericLinkedList:");
+        System.out.println("GenericLinkedStringList:");
+
+        GenericLinkedList<String> stringLinkedList = new GenericLinkedList<>();
+        stringLinkedList.addToEnd("c");
+        stringLinkedList.addToBeginning("b");
+        stringLinkedList.addToBeginning("a");
+
+        stringLinkedList.print();
+        System.out.println(stringLinkedList.getCount());
+
+        stringLinkedList.reverse();
+        stringLinkedList.print();
+
+        System.out.println(stringLinkedList.contains("a"));
+        System.out.println(stringLinkedList.indexOf("b"));
+
+        stringLinkedList.remove(1);
+        stringLinkedList.print();
+
+        stringLinkedList.insert("l", 1);
+        stringLinkedList.insert("k", 2);
+        stringLinkedList.print();
+
+        System.out.println();
+        System.out.println("GenericLinkedIntegerList:");
 
         GenericLinkedList<Integer> integerLinkedList = new GenericLinkedList<>();
         integerLinkedList.addToEnd(5);
         integerLinkedList.addToBeginning(1);
         System.out.println(integerLinkedList.get(0));
 
-        integerLinkedList.print();
-
-        integerLinkedList.insert(11,2);
         integerLinkedList.print();
 
         System.out.println(integerLinkedList.indexOf(1));
@@ -61,5 +82,26 @@ public class Main {
         integerLinkedList.reverse();
         integerLinkedList.print();
 
+        System.out.println(integerLinkedList.getCount());
+
+        integerLinkedList.addToBeginning(8);
+        integerLinkedList.print();
+        System.out.println(integerLinkedList.getCount());
+
+        integerLinkedList.remove(1);
+        integerLinkedList.print();
+
+        integerLinkedList.insert(22,1);
+        integerLinkedList.print();
+
+        System.out.println();
+
+        integerLinkedList.insert(11,2);
+        integerLinkedList.print();
+
+        System.out.println(stringLinkedList.getCount());
+
+        integerLinkedList.insert(111, 3);
+        integerLinkedList.print();
     }
 }

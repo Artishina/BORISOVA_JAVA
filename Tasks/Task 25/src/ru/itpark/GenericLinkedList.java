@@ -150,7 +150,7 @@ public class GenericLinkedList<T> implements GenericList<T> {
     public void print() {
         Node<T> node = top;
         System.out.print(node.getValue());
-        for (int i = 0; i < count - 2; i++) {
+        for (int i = 0; i < count - 1; i++) {
             node = node.getNext();
             System.out.print(" " + node.getValue());
         }
