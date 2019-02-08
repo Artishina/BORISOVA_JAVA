@@ -1,6 +1,6 @@
 package ru.itpark;
 
-class Airplane extends Vehicle implements Flyable {
+public class Airplane extends Vehicle implements Flyable {
 
     public Airplane(int number) {
         super(number);

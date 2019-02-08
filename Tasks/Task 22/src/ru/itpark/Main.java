@@ -15,7 +15,7 @@ public class Main {
 
         Vehicle[] vehicles = {car, helicopter, airplane, tank, spaceship, bicycle};
 
-        Driving[] drivingVehicles = {car, tank, bicycle};
+        Drivable[] drivableVehicles = {car, tank, bicycle};
         Flyable[] flyableVehicles = {helicopter, spaceship, airplane};
         Shooting[] shootingsVehicles = {tank, spaceship};
 
@@ -24,7 +24,7 @@ public class Main {
 
         ParkingLot.checkIfFull();
 
-        ParkingLot.park((Vehicle)drivingVehicles[0]);
+        ParkingLot.park((Vehicle) drivableVehicles[0]);
 
         Vehicle.shootFew(shootingsVehicles);
         Vehicle.flyFew(flyableVehicles);

@@ -1,8 +1,8 @@
 package ru.itpark;
 
-class Bicycle extends Vehicle implements Driving {
+public class Bicycle extends Vehicle implements Drivable {
 
-    Bicycle(int number) {
+    public Bicycle(int number) {
         super(number);
     }
 

@@ -1,27 +1,27 @@
 package ru.itpark;
 
-abstract class Vehicle {
+public abstract class Vehicle {
     private boolean isParked;
     private int vehicleNum;
 
 
-    int getVehicleNum() {
+    public int getVehicleNum() {
         return vehicleNum;
     }
 
-    boolean getIsParked() {
+    public boolean getIsParked() {
         return isParked;
     }
 
-    void setIsParked(boolean isParked) {
+    public void setIsParked(boolean isParked) {
         this.isParked = isParked;
     }
 
-    Vehicle(int number) {
+    public Vehicle(int number) {
         vehicleNum = number;
     }
 
-    void checkIfParked() {
+    public void checkIfParked() {
         System.out.print("Проверка состояния транспорта... ");
         if (getIsParked()) {
             System.out.println("Транспорт припаркован");
@@ -30,15 +30,15 @@ abstract class Vehicle {
         }
     }
 
-    void park() {
+    public void park() {
         ParkingLot.park(this);
     }
 
-    void unpark() {
+    public void unpark() {
         ParkingLot.unpark(this);
     }
 
-    static void shootFew(Shooting[] vehicles) {
+    public static void shootFew(Shooting[] vehicles) {
         System.out.println("Стрелба...");
         for (int i = 0; i < vehicles.length; i++) {
             System.out.println("#" + (i + 1) + vehicles[i].shoot());
@@ -46,7 +46,7 @@ abstract class Vehicle {
         System.out.println();
     }
 
-    static void driveFew(Driving[] vehicles) {
+    public static void driveFew(Drivable[] vehicles) {
         System.out.println("Езда...");
         for (int i = 0; i < vehicles.length; i++) {
             System.out.println("#" + (i + 1) + vehicles[i].drive());
@@ -54,7 +54,7 @@ abstract class Vehicle {
         System.out.println();
     }
 
-    static void flyFew(Flyable[] vehicles) {
+    public static void flyFew(Flyable[] vehicles) {
         System.out.println("Полет...");
         for (int i = 0; i < vehicles.length; i++) {
             System.out.println("#" + (i + 1) + vehicles[i].fly());

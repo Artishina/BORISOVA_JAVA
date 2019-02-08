@@ -1,6 +1,6 @@
 package ru.itpark;
 
-class ParkingLot {
+public class ParkingLot {
     private final static int MAX_PARKING_SIZE = 9;
 
     private int[] numbers = {1111, 1112, 1113, 1114, 1115, 1116, 1117, 1118, 1119};
@@ -48,7 +48,7 @@ class ParkingLot {
         return false;
     }
 
-    static void checkIfFull() {
+    public static void checkIfFull() {
         if (parkingLot.getIsFull()) {
             System.out.println("Парковка заполнена. Мест больше нет");
         } else {
@@ -74,7 +74,7 @@ class ParkingLot {
         leftParkingSlots = MAX_PARKING_SIZE - count;
     }
 
-    static void park(Vehicle vehicle) {
+    public static void park(Vehicle vehicle) {
         if (!vehicle.getIsParked() && !parkingLot.getIsFull()) {
             if (parkingLot.contains(vehicle.getVehicleNum()) && !parkingLot.isTaken(vehicle.getVehicleNum())) {
                 System.out.print("Доступ по гос. номеру #" + vehicle.getVehicleNum() + " получен. ");
@@ -90,7 +90,7 @@ class ParkingLot {
         }
     }
 
-    static void parkFew(Vehicle[] vehicles) {
+    public static void parkFew(Vehicle[] vehicles) {
         System.out.println();
         System.out.println("Парковка транспорта...");
         for (int i = 0; i < vehicles.length; i++) {
@@ -100,7 +100,7 @@ class ParkingLot {
         System.out.println();
     }
 
-    static void unpark(Vehicle vehicle) {
+    public static void unpark(Vehicle vehicle) {
         if (vehicle.getIsParked()) {
             parkingLot.remove();
             vehicle.setIsParked(false);
@@ -110,7 +110,7 @@ class ParkingLot {
         }
     }
 
-    static void unparkFew(Vehicle[] vehicles) {
+    public static void unparkFew(Vehicle[] vehicles) {
         System.out.println();
         System.out.println("Выезд с парковки...");
         for (int i = 0; i < vehicles.length; i++) {

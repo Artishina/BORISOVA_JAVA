@@ -1,8 +1,8 @@
 package ru.itpark;
 
-class Helicopter extends Vehicle implements Flyable {
+public class Helicopter extends Vehicle implements Flyable {
 
-    Helicopter(int number) {
+    public Helicopter(int number) {
         super(number);
     }
 

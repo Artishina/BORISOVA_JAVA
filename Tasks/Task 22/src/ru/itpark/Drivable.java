@@ -1,5 +1,5 @@
 package ru.itpark;
 
-public interface Driving {
+public interface Drivable {
     String drive();
 }

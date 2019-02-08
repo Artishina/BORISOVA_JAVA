@@ -1,6 +1,6 @@
 package ru.itpark;
 
-class Tank extends Vehicle implements Driving, Shooting {
+public class Tank extends Vehicle implements Drivable, Shooting {
 
     public Tank(int number) {
         super(number);

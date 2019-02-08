@@ -1,6 +1,6 @@
 package ru.itpark;
 
-class Spaceship extends Vehicle implements Shooting, Flyable {
+public class Spaceship extends Vehicle implements Shooting, Flyable {
 
     public Spaceship(int number) {
         super(number);

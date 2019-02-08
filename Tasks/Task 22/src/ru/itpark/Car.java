@@ -1,8 +1,8 @@
 package ru.itpark;
 
-class Car extends Vehicle implements Driving {
+public class Car extends Vehicle implements Drivable {
 
-    Car(int number) {
+    public Car(int number) {
         super(number);
     }
 
