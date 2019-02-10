@@ -158,7 +158,7 @@ public class GenericLinkedList<T> implements GenericList<T> {
     }
 
     private class GenericLinkedListIterator implements Iterator<T> {
-        Node<T> current;
+        private Node<T> current;
 
         public GenericLinkedListIterator() {
             this.current = top;

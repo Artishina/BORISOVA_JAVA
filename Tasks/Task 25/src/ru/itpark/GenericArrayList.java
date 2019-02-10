@@ -116,13 +116,9 @@ public class GenericArrayList<T> implements GenericList<T> {
         System.out.println();
     }
 
-    public T show() {
-        return elements[0];
-    }
-
     private class GenericArrayListIterator implements Iterator<T> {
-        T current;
-        int i = 0;
+        private T current;
+        private int i = 0;
 
         public GenericArrayListIterator() {
             this.current = elements[i];
