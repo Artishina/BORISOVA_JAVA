@@ -156,4 +156,29 @@ public class GenericLinkedList<T> implements GenericList<T> {
         }
         System.out.println();
     }
+
+    private class GenericLinkedListIterator implements Iterator<T> {
+        Node<T> current;
+
+        public GenericLinkedListIterator() {
+            this.current = top;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return current != null;
+        }
+
+        @Override
+        public T next() {
+            T value = current.getValue();
+            current = current.getNext();
+            return value;
+        }
+    }
+
+    public Iterator<T> iterator() {
+        return new GenericLinkedListIterator();
+    }
 }
+

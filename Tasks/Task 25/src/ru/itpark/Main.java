@@ -103,5 +103,41 @@ public class Main {
 
         integerLinkedList.insert(111, 3);
         integerLinkedList.print();
+
+        System.out.println();
+        System.out.println("IntegerLinkedListIterator:");
+
+        Iterator<Integer> intIterator = integerLinkedList.iterator();
+
+        while (intIterator.hasNext()) {
+            System.out.println(intIterator.next());
+        }
+
+        System.out.println();
+        System.out.println("StringLinkedListIterator:");
+
+        Iterator<String> stringIterator = stringLinkedList.iterator();
+
+        while (stringIterator.hasNext()) {
+            System.out.println(stringIterator.next());
+        }
+
+        System.out.println();
+        System.out.println("IntegerArrayListIterator:");
+
+        Iterator<Integer> intArrayIterator = integerList.iterator();
+
+        while (intArrayIterator.hasNext()) {
+            System.out.println(intArrayIterator.next());
+        }
+
+        System.out.println();
+        System.out.println("StringArrayListIterator:");
+
+        Iterator<String> stringArrayIterator = stringList.iterator();
+
+        while (stringArrayIterator.hasNext()) {
+            System.out.println(stringArrayIterator.next());
+        }
     }
 }

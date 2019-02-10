@@ -115,4 +115,37 @@ public class GenericArrayList<T> implements GenericList<T> {
         }
         System.out.println();
     }
+
+    public T show() {
+        return elements[0];
+    }
+
+    private class GenericArrayListIterator implements Iterator<T> {
+        T current;
+        int i = 0;
+
+        public GenericArrayListIterator() {
+            this.current = elements[i];
+        }
+
+        @Override
+        public boolean hasNext() {
+            if (i < elements.length) {
+                return true;
+            } else {
+                return  false;
+            }
+        }
+
+        @Override
+        public T next() {
+            current = elements[i++];
+            T value = current;
+            return value;
+        }
+    }
+
+    public Iterator<T> iterator() {
+        return new GenericArrayListIterator();
+    }
 }
