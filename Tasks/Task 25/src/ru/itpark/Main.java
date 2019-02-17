@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("GenericArrayIntegerList:");
-        GenericArrayList<Integer> integerList = new GenericArrayList<>(10);
+        GenericList<Integer> integerList = new GenericArrayList<>(10);
         integerList.addToBeginning(1);
         integerList.addToBeginning(2);
 
@@ -28,7 +28,7 @@ public class Main {
         System.out.println();
         System.out.println("GenericArrayStringList:");
 
-        GenericArrayList<String> stringList = new GenericArrayList<>(10);
+        GenericList<String> stringList = new GenericArrayList<>(10);
         stringList.addToEnd("a");
         stringList.addToEnd("b");
         stringList.addToEnd("c");
@@ -44,7 +44,7 @@ public class Main {
         System.out.println();
         System.out.println("GenericLinkedStringList:");
 
-        GenericLinkedList<String> stringLinkedList = new GenericLinkedList<>();
+        GenericList<String> stringLinkedList = new GenericLinkedList<>();
         stringLinkedList.addToEnd("c");
         stringLinkedList.addToBeginning("b");
         stringLinkedList.addToBeginning("a");
@@ -68,7 +68,7 @@ public class Main {
         System.out.println();
         System.out.println("GenericLinkedIntegerList:");
 
-        GenericLinkedList<Integer> integerLinkedList = new GenericLinkedList<>();
+        GenericList<Integer> integerLinkedList = new GenericLinkedList<>();
         integerLinkedList.addToEnd(5);
         integerLinkedList.addToBeginning(1);
         System.out.println(integerLinkedList.get(0));

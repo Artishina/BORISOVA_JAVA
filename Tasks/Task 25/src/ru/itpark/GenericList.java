@@ -1,6 +1,6 @@
 package ru.itpark;
 
-public interface GenericList<V> {
+public interface GenericList<V> extends Iterable<V> {
     void addToEnd(V value);
 
     void addToBeginning(V value);

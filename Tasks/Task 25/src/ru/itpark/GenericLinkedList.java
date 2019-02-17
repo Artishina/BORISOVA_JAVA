@@ -10,6 +10,16 @@ public class GenericLinkedList<T> implements GenericList<T> {
         this.count = 0;
     }
 
+    private static class Node<N> {
+        N value;
+        Node<N> next;
+
+        Node(N value) {
+            this.value = value;
+            this.next = null;
+        }
+    }
+
     @Override
     public void addToEnd(T value) {
         Node<T> node = new Node<T>(value);
@@ -18,7 +28,7 @@ public class GenericLinkedList<T> implements GenericList<T> {
             top = node;
             tail = top;
         } else {
-            tail.setNext(node);
+            tail.next = node;
             tail = node;
         }
         count++;
@@ -31,7 +41,7 @@ public class GenericLinkedList<T> implements GenericList<T> {
         if (top == null) {
             tail = node;
         }
-        node.setNext(top);
+        node.next = top;
         count++;
         top = node;
     }
@@ -51,16 +61,16 @@ public class GenericLinkedList<T> implements GenericList<T> {
             current = top;
             if (index > 0) {
                 for (int i = 0; i < index; i++) {
-                    current = current.getNext();
+                    current = current.next;
                 }
             }
         }
-        return current.getValue();
+        return current.value;
     }
 
     @Override
     public void insert(T value, int index) {
-        Node<T> node = new Node(value);
+        Node<T> node = new Node<T>(value);
         Node prev = top;
 
         if (index < 0 || index > count) {
@@ -75,10 +85,10 @@ public class GenericLinkedList<T> implements GenericList<T> {
         } else {
             for (int i = 1; i <= index; i++) {
                 if (i == index) {
-                    node.setNext(prev.getNext());
-                    prev.setNext(node);
+                    node.next = prev.next;
+                    prev.next = node;
                 }
-                prev = prev.getNext();
+                prev = prev.next;
             }
         }
         count++;
@@ -95,10 +105,10 @@ public class GenericLinkedList<T> implements GenericList<T> {
 
         for (int i = 0; i < index; i++) {
             if (i == index - 1) {
-                prev.setNext(prev.getNext().getNext());
+                prev.next = prev.next.next;
                 count--;
             }
-            prev = prev.getNext();
+            prev = prev.next;
         }
     }
 
@@ -107,8 +117,8 @@ public class GenericLinkedList<T> implements GenericList<T> {
         Node<T> prev = null;
         Node<T> current = top;
         while (current != null) {
-            Node next = current.getNext();
-            current.setNext(prev);
+            Node next = current.next;
+            current.next = prev;
             prev = current;
             current = next;
         }
@@ -125,10 +135,10 @@ public class GenericLinkedList<T> implements GenericList<T> {
         Node<T> node = top;
 
         for (int i = 0; i < count; i++) {
-            if (node.getValue() == value) {
+            if (node.value == value) {
                 return true;
             }
-            node = node.getNext();
+            node = node.next;
         }
         return false;
     }
@@ -138,10 +148,10 @@ public class GenericLinkedList<T> implements GenericList<T> {
         Node<T> node = top;
 
         for (int i = 0; i < count; i++) {
-            if (node.getValue() == value) {
+            if (node.value == value) {
                 return i;
             }
-            node = node.getNext();
+            node = node.next;
         }
         return -1;
     }
@@ -149,10 +159,10 @@ public class GenericLinkedList<T> implements GenericList<T> {
     @Override
     public void print() {
         Node<T> node = top;
-        System.out.print(node.getValue());
+        System.out.print(node.value);
         for (int i = 0; i < count - 1; i++) {
-            node = node.getNext();
-            System.out.print(" " + node.getValue());
+            node = node.next;
+            System.out.print(" " + node.value);
         }
         System.out.println();
     }
@@ -171,8 +181,8 @@ public class GenericLinkedList<T> implements GenericList<T> {
 
         @Override
         public T next() {
-            T value = current.getValue();
-            current = current.getNext();
+            T value = current.value;
+            current = current.next;
             return value;
         }
     }
