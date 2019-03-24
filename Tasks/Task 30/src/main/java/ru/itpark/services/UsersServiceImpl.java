@@ -36,10 +36,17 @@ public class UsersServiceImpl implements UsersService {
         if (userCandidate.isPresent()) {
             User user = userCandidate.get();
             if (encoder.matches(form.getPassword(), user.getPasswordHash())) {
-                return Optional.of(UUID.randomUUID().toString());
+                Optional<String> value = Optional.of(UUID.randomUUID().toString());
+                usersRepository.saveCookieValue(user.getId(), value);
+                return value;
             }
         }
         return Optional.empty();
+    }
+
+    @Override
+    public boolean isExistsByCookie() {
+        return false;
     }
 }
 

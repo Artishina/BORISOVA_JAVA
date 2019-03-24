@@ -9,4 +9,6 @@ public interface UsersRepository extends CrudRepository<User> {
     Optional<User> findOneByLogin(String login);
 
     List<User> findAllByFirstNameAndLastName(String firstName, String lastName);
+
+    void saveCookieValue(Long id, Optional<String> cookieValue);
 }

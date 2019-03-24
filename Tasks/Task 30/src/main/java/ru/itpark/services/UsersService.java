@@ -8,4 +8,6 @@ public interface UsersService {
     void signUp(AuthUserForm form);
 
     Optional<String> signInAndCreateCookieValue(AuthUserForm form);
+
+    boolean isExistsByCookie();
 }

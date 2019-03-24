@@ -27,6 +27,10 @@ public class UsersRepositoryJdbcTemplateImpl implements UsersRepository {
     private final static String SQL_INSERT = "insert into service_user(first_name, last_name, login, password_hash) " +
             "values (?, ?, ?, ?)";
 
+    //language=SQL
+    private final static String SQL_INSERT_COOKIE = "insert into user_auth(user_id, cookie_value) " +
+            "values (?, ?)";
+
     private JdbcTemplate jdbcTemplate;
 
     private RowMapper<User> usersRowMapper = (row, rowNumber) ->
@@ -80,5 +84,10 @@ public class UsersRepositoryJdbcTemplateImpl implements UsersRepository {
     @Override
     public List<User> findAllByFirstNameAndLastName(String firstName, String lastName) {
         return jdbcTemplate.query(SQL_SELECT_ALL_BY_FIRST_NAME_AND_LAST_NAME, usersRowMapper, firstName, lastName);
+    }
+
+    @Override
+    public void saveCookieValue(Long id, Optional<String> cookieValue) {
+        jdbcTemplate.update(SQL_INSERT_COOKIE, id, cookieValue);
     }
 }
